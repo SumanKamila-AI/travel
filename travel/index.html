@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voyance Travel.co — Your Gateway To The World</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<nav class="nav" id="topnav">
+  <div class="vc-container nav-inner">
+    <a href="#" class="logo" aria-label="Voyance home">
+      <span class="logo-mark">V</span>
+      <span class="logo-name">
+        <b>Voyance</b>
+        <span>Travel.co</span>
+      </span>
+    </a>
+
+    <div class="nav-menu">
+      <a href="#" class="nav-link active">Home <i class="bi bi-chevron-down"></i></a>
+      <a href="#" class="nav-link">Destinations <i class="bi bi-chevron-down"></i></a>
+      <a href="#" class="nav-link">Travel Package <i class="bi bi-chevron-down"></i></a>
+      <a href="#" class="nav-link">Visa <i class="bi bi-chevron-down"></i></a>
+      <a href="#" class="nav-link">Pages <i class="bi bi-chevron-down"></i></a>
+      <a href="#" class="nav-link">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <div class="nav-help">
+        <div class="nav-help-icon"><i class="bi bi-telephone-fill"></i></div>
+        <div class="nav-help-text">Need Help?<b>+1 415 555 0420</b></div>
+      </div>
+      <button class="nav-search-btn" aria-label="Search"><i class="bi bi-search"></i></button>
+      <a href="#" class="nav-login"><i class="bi bi-person-fill"></i> Login</a>
+      <button class="btn-icon-circle nav-burger" id="mobBurger" aria-label="Open menu"><i class="bi bi-list fs-4"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="mob-menu" id="mobMenu">
+  <button class="btn-icon-circle" id="mobClose" style="position:absolute;top:20px;right:20px" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+  <a href="#">Home</a>
+  <a href="#">Destinations</a>
+  <a href="#">Travel Package</a>
+  <a href="#">Visa</a>
+  <a href="#">Pages</a>
+  <a href="#">Contact</a>
+  <div style="margin-top:28px;display:flex;flex-direction:column;gap:12px">
+    <a href="#" class="btn btn-light">Search destinations</a>
+    <a href="#" class="btn btn-dark">Login</a>
+  </div>
+</div>
+
+<!-- =================== PROMO BAR =================== -->
+<div class="promo-bar">
+  <div class="vc-container promo-bar-inner">
+    <button class="promo-bar-arrow" id="promoPrev" aria-label="Previous offer"><i class="bi bi-arrow-left"></i></button>
+    <div class="promo-bar-text" id="promoText"><b>Enjoy Family Holiday Packages with Flexible Payment Options</b></div>
+    <button class="promo-bar-arrow" id="promoNext" aria-label="Next offer"><i class="bi bi-arrow-right"></i></button>
+  </div>
+</div>
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-grain"></div>
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+      <path d="M1440 900 L1440 200 L1380 220 L1340 180 L1310 220 L1280 200 L1250 260 L1220 240 L1200 300 L1180 280 L1150 340 L1130 320 L1100 380 L1080 360 L1050 420 L1030 400 L1000 460 L980 440 L950 500 L920 600 L1440 900 Z" fill="rgba(20,40,32,0.7)"/>
+      <path d="M0 900 L0 300 L40 280 L70 320 L100 290 L130 340 L160 310 L190 370 L220 340 L250 400 L280 380 L310 440 L340 420 L370 480 L400 460 L430 520 L460 500 L490 560 L520 540 L0 900 Z" fill="rgba(15,35,28,0.7)"/>
+      <ellipse cx="720" cy="780" rx="900" ry="60" fill="rgba(10,30,40,0.4)"/>
+    </svg>
+  </div>
+
+  <button class="hero-nav-arrow prev" id="heroPrev" aria-label="Previous"><i class="bi bi-arrow-left"></i></button>
+  <button class="hero-nav-arrow next" id="heroNext" aria-label="Next"><i class="bi bi-arrow-right"></i></button>
+
+  <div class="hero-content">
+    <h1 id="heroTitle">Your Gateway To The World.</h1>
+    <p class="lede" id="heroSubtitle">Ideal for explorers seeking seamless booking and expert travel support every step of the way.</p>
+  </div>
+
+  <div class="hero-slide-dots" id="heroDots"></div>
+</section>
+
+<!-- =================== SEARCH MODULE =================== -->
+<div class="search-wrap vc-container">
+  <div class="search-tabs" id="searchTabs">
+    <button class="search-tab active" data-tab="Tours"><i class="bi bi-briefcase"></i> Tours</button>
+    <button class="search-tab" data-tab="Hotels"><i class="bi bi-building"></i> Hotels</button>
+    <button class="search-tab" data-tab="Visa"><i class="bi bi-file-earmark-text"></i> Visa</button>
+    <button class="search-tab" data-tab="Experience"><i class="bi bi-stars"></i> Experience</button>
+  </div>
+
+  <div class="search-card">
+    <div class="search-row">
+      <div class="search-field">
+        <i class="bi bi-geo-alt search-field-icon"></i>
+        <div class="search-field-body">
+          <div class="search-field-label">Select</div>
+          <input class="search-field-value" placeholder="Destination">
+        </div>
+      </div>
+      <div class="search-field">
+        <i class="bi bi-calendar3 search-field-icon"></i>
+        <div class="search-field-body">
+          <div class="search-field-label">When</div>
+          <input class="search-field-value" value="22 May, Friday 2026">
+        </div>
+      </div>
+      <div class="search-field">
+        <i class="bi bi-mic search-field-icon"></i>
+        <div class="search-field-body">
+          <div class="search-field-label">Select</div>
+          <input class="search-field-value" value="Tour Types">
+        </div>
+      </div>
+      <button class="search-submit"><i class="bi bi-search"></i> SEARCH</button>
+    </div>
+    <div class="search-foot">
+      Can't find what you're looking for? create your <a href="#">Custom Itinerary</a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== POPULAR PACKAGE =================== -->
+<section class="section section-pkg reveal" id="popular">
+  <span class="deco-balloon" aria-hidden="true">
+    <svg width="80" height="100" viewBox="0 0 80 100" fill="none">
+      <ellipse cx="40" cy="40" rx="28" ry="34" fill="#FF7A4A"/>
+      <ellipse cx="22" cy="46" rx="14" ry="20" fill="#FF9968" opacity=".8"/>
+      <path d="M40 74v8M36 78l4 4 4-4" stroke="#0B0B0B" stroke-width="1"/>
+      <rect x="35" y="82" width="10" height="8" fill="#0B0B0B" rx="1"/>
+    </svg>
+  </span>
+  <span class="deco-ring" aria-hidden="true">
+    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+      <circle cx="40" cy="40" r="32" fill="none" stroke="#E84A2A" stroke-width="6"/>
+      <circle cx="40" cy="40" r="32" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="14 14"/>
+    </svg>
+  </span>
+  <span class="deco-passport" aria-hidden="true">
+    <svg width="80" height="100" viewBox="0 0 80 100" fill="none">
+      <rect x="14" y="10" width="56" height="76" rx="4" fill="#1B5E3A" transform="rotate(-12 40 50)"/>
+      <circle cx="36" cy="42" r="8" fill="none" stroke="#E8D08C" stroke-width="1.5" transform="rotate(-12 40 50)"/>
+      <path d="M30 56h16M30 62h16" stroke="#E8D08C" stroke-width="1" transform="rotate(-12 40 50)"/>
+    </svg>
+  </span>
+
+  <div class="vc-container">
+    <div class="section-head">
+      <h2>Popular Package</h2>
+      <p>A curated list of the most popular travel packages based on different destinations.</p>
+    </div>
+
+    <div class="pkg-carousel">
+      <div class="pkg-track" id="popularTrack"></div>
+    </div>
+
+    <div class="carousel-dots" id="popularDots"></div>
+  </div>
+</section>
+
+<!-- =================== PRIORITY BANNER =================== -->
+<section style="padding: 40px 0; background:#fff" class="reveal">
+  <div class="vc-container">
+    <div class="priority-banner">
+      <h2>Voyance — Your Journey, Our Priority!</h2>
+      <div class="priority-features">
+        <div class="priority-feat">
+          <div class="priority-feat-icon orange"><i class="bi bi-cursor"></i></div>
+          <div>
+            <h3>Local Guidance</h3>
+            <p>Travel designers and on-the-ground guides who live where you're going.</p>
+          </div>
+        </div>
+        <div class="priority-feat">
+          <div class="priority-feat-icon blue"><i class="bi bi-percent"></i></div>
+          <div>
+            <h3>Deals & Discounts</h3>
+            <p>Negotiated rates on flights, hotels and packages — passed straight to you.</p>
+          </div>
+        </div>
+        <div class="priority-feat">
+          <div class="priority-feat-icon yellow"><i class="bi bi-award"></i></div>
+          <div>
+            <h3>Saves Money</h3>
+            <p>No hidden fees, no tourist traps — multi-destination, budget-friendly options.</p>
+          </div>
+        </div>
+      </div>
+      <div class="priority-ctas">
+        <a href="#" class="btn btn-dark">Find Your Favourite Travel Package!</a>
+        <a href="#" class="btn-link">Discover Today <i class="bi bi-arrow-up-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TOP DESTINATIONS =================== -->
+<section class="section reveal" id="topDest">
+  <div class="vc-container">
+    <div class="section-head">
+      <h2>Top Destinations</h2>
+    </div>
+
+    <div class="top-dest-carousel">
+      <button class="top-dest-side-arrow prev" id="topDestPrev" aria-label="Previous"><i class="bi bi-arrow-left"></i></button>
+      <div class="top-dest-track" id="topDestTrack"></div>
+      <button class="top-dest-side-arrow next" id="topDestNext" aria-label="Next"><i class="bi bi-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TRUSTPOINT =================== -->
+<section class="section section-trust reveal" id="trustpoint">
+  <span class="trust-star-deco" aria-hidden="true">
+    <svg viewBox="0 0 200 200" fill="none">
+      <path d="M100 20 L120 80 L180 80 L130 115 L150 175 L100 140 L50 175 L70 115 L20 80 L80 80 Z" stroke="rgba(11,11,11,.15)" stroke-width="1" fill="none"/>
+    </svg>
+  </span>
+  <div class="vc-container">
+    <div class="trust-grid">
+      <div class="trust-left">
+        <h2>Your Trustpoint, Voyance Best for Travel Agency.</h2>
+        <p>
+          <b>At Voyance Travel, we are passionate about creating exceptional travel experiences.</b>
+          Whether you're looking for a relaxing beach vacation, an adventurous trek, a luxurious getaway, or a cultural expedition.
+        </p>
+        <div class="trust-experience">
+          <svg class="trust-exp-arrow" viewBox="0 0 80 50" fill="none">
+            <path d="M5 40 Q 20 10, 45 25 T 70 15" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M62 8 L72 15 L65 22" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div class="trust-exp-num">12<sup>+</sup></div>
+          <div class="trust-exp-label"><b>Years</b><span>of Experience</span></div>
+        </div>
+      </div>
+
+      <div class="trust-right">
+        <div class="trust-arch a1"><div class="img-ph img-2" data-label="beach"></div></div>
+        <div class="trust-arch a2"><div class="img-ph img-3" data-label="waterfall"></div></div>
+        <div class="trust-arch-badge"><i class="bi bi-airplane-fill"></i></div>
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="services-head">We Provide to Smart Services</div>
+      <div class="services-row" id="servicesRow"></div>
+    </div>
+
+    <div class="trust-pilot-row">
+      <b>Excellent!</b>
+      <span class="trust-pilot-stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+      </span>
+      <span class="trust-pilot-text">5.0 Rating out of 5.0 based on <a href="#">24K+ reviews</a></span>
+      <span class="trust-pilot-logo"><i class="bi bi-star-fill star"></i> Trustpilot</span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ONE DAY TRIPS =================== -->
+<section class="section reveal" id="oneday">
+  <div class="vc-container">
+    <div class="section-head">
+      <h2>One Day Trips</h2>
+      <p>A curated list of the most popular travel packages based on different destinations.</p>
+    </div>
+    <div class="pkg-track" id="oneDayTrack" style="flex-wrap:wrap"></div>
+    <div style="display:flex;justify-content:center;margin-top:36px">
+      <a href="#" class="btn btn-light">View All Trips <i class="bi bi-arrow-up-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FLASH BANNER =================== -->
+<section style="padding: 40px 0; background:#fff" class="reveal">
+  <div class="vc-container">
+    <div class="flash-banner">
+      <div class="flash-left">
+        <span class="flash-tag">Limited Offer</span>
+        <h3>Flash 50% off all tour packages</h3>
+        <a href="#" class="flash-cta">Grab The Deal Now <i class="bi bi-arrow-up-right"></i></a>
+      </div>
+      <div class="flash-right">
+        <div class="flash-phone">
+          <div class="flash-phone-screen">
+            <div class="flash-phone-logo">V</div>
+            <b>Voyance</b>
+            <span>Travel.co</span>
+            <div class="book-pill">Book Trip</div>
+          </div>
+        </div>
+        <div class="flash-family-img"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== LAST MINUTE DEALS =================== -->
+<section class="section reveal" id="lastMin">
+  <div class="vc-container">
+    <div class="section-head">
+      <h2>Last Minute Deals!</h2>
+      <p>A curated list of the most popular travel packages based on different destinations.</p>
+    </div>
+    <div class="pkg-track" id="lastMinTrack" style="flex-wrap:wrap"></div>
+    <div class="carousel-dots">
+      <span class="car-dot active"></span>
+      <span class="car-dot"></span>
+      <span class="car-dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== AWARD =================== -->
+<section class="award-section reveal">
+  <div class="award-bg"><div class="award-bg-waterfall"></div></div>
+  <div class="award-frame">
+    <div class="award-trophy"><i class="bi bi-trophy" style="font-size:36px"></i></div>
+    <div class="award-tag-line">The World Travel Award</div>
+    <div class="award-stars">★ ★ ★ ★ ★</div>
+    <div class="award-world-wide">World-Wide</div>
+    <div class="award-best">BEST</div>
+    <div class="award-tagline2">Travel agency</div>
+    <a href="#" class="award-cta">View All Package <i class="bi bi-arrow-up-right"></i></a>
+  </div>
+</section>
+
+<!-- =================== LOGOS STRIP =================== -->
+<section class="logos-strip reveal">
+  <div class="vc-container">
+    <p class="logos-label">Those Company You Can Easily Trust!</p>
+    <div class="logos-row" id="logosRow"></div>
+  </div>
+</section>
+
+<!-- =================== INSPIRATIONS =================== -->
+<section class="section reveal" id="inspirations">
+  <div class="vc-container">
+    <div class="section-head">
+      <h2>Travel Inspirations</h2>
+      <p>A curated list of inspiration the most tour & travel based on different destinations.</p>
+    </div>
+    <div class="insp-grid" id="inspGrid"></div>
+    <div class="insp-cta-row">
+      <a href="#" class="btn btn-light">View All Inspiration <i class="bi bi-arrow-up-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TESTIMONIALS =================== -->
+<section class="section section-test reveal" id="testimonials">
+  <div class="vc-container">
+    <div class="section-head">
+      <h2>Hear It from Travelers</h2>
+      <p>We go beyond just booking trips — we create unforgettable travel experiences that match your dreams!</p>
+    </div>
+    <div class="test-grid" id="testGrid"></div>
+    <div class="test-controls">
+      <div class="test-rating-card">
+        <div class="big-num">4.5</div>
+        <div>
+          <div class="name-logo"><b><i class="bi bi-star-fill" style="color:var(--green-trust)"></i> Trustpilot</b></div>
+          <div class="scale">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            <span style="color:var(--ink-3);margin-left:6px">Reviews</span>
+          </div>
+        </div>
+      </div>
+      <div class="test-arrows">
+        <button class="btn-icon-circle" aria-label="Previous"><i class="bi bi-arrow-left"></i></button>
+        <button class="btn-icon-circle" aria-label="Next"><i class="bi bi-arrow-right"></i></button>
+      </div>
+      <div class="test-rating-card">
+        <div class="big-num">4.5</div>
+        <div>
+          <div class="name-logo"><b><span class="tripadvisor-circle">T</span> Tripadvisor</b></div>
+          <div class="scale">
+            <span style="display:flex;gap:2px">
+              <span style="width:11px;height:11px;border-radius:50%;background:var(--green-trust)"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:var(--green-trust)"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:var(--green-trust)"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:var(--green-trust)"></span>
+              <span style="width:11px;height:11px;border-radius:50%;border:1.5px solid var(--green-trust)"></span>
+            </span>
+            <span style="color:var(--ink-3);margin-left:6px">Reviews</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== STATS =================== -->
+<section class="stats-row reveal" id="statsRow">
+  <div class="vc-container">
+    <div class="stats-inner" id="statsInner"></div>
+  </div>
+</section>
+
+<!-- =================== GALLERY =================== -->
+<section class="section section-gallery reveal" id="gallery">
+  <div class="vc-container">
+    <div class="gallery-grid">
+      <div class="gallery-left">
+        <h2>Voyance Gallery</h2>
+        <p>We go beyond just booking trips — we create unforgettable travel experiences that match your dreams!</p>
+        <a href="#" class="gallery-cta">Book Your Trip <i class="bi bi-arrow-up-right"></i></a>
+        <div class="gallery-stat-floating">
+          <div class="gallery-stat-icon"><i class="bi bi-airplane-fill"></i></div>
+          <div>
+            <div class="gallery-stat-num">26K<sup>+</sup></div>
+            <div class="gallery-stat-label">Tour Completed</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-right">
+        <div class="gallery-tile g-1"><div class="img-ph" data-label="cherry blossom" style="background:linear-gradient(180deg,#f5b8b0 0%,#c87870 60%,#6b3838 100%)"></div></div>
+        <div class="gallery-tile g-2"><div class="img-ph" data-label="bridge walk" style="background:linear-gradient(180deg,#d8c4a0 0%,#a07848 100%)"></div></div>
+        <div class="gallery-tile g-3"><div class="img-ph" data-label="friends selfie" style="background:linear-gradient(180deg,#9bcde0 0%,#5b8aa8 100%)"></div></div>
+        <div class="gallery-tile g-4"><div class="img-ph" data-label="long-tail boats" style="background:linear-gradient(180deg,#6ab8d8 0%,#2a8088 60%,#1a4858 100%)"></div></div>
+        <div class="gallery-tile g-5"><div class="img-ph" data-label="temple gate" style="background:linear-gradient(180deg,#8a9870 0%,#4a5838 60%,#1a2818 100%)"></div></div>
+        <div class="gallery-tile g-6"><div class="img-ph" data-label="hikers" style="background:linear-gradient(180deg,#98c0d8 0%,#688ab8 100%)"></div></div>
+        <div class="gallery-center-badge" aria-hidden="true">
+          <div class="gallery-center-badge-inner"><i class="bi bi-file-earmark"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="vc-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" aria-label="Voyance home">
+          <span class="logo-mark">V</span>
+          <span class="logo-name">
+            <b style="color:#fff">Voyance</b>
+            <span style="color:rgba(255,255,255,.5)">Travel.co</span>
+          </span>
+        </a>
+        <p>Hand-built journeys with local trip directors on five continents. Real itineraries, transparent pricing, one number to call.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe <i class="bi bi-arrow-right"></i></button>
+        </form>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#">All Tours</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Hotels</a></li>
+          <li><a href="#">Visa</a></li>
+          <li><a href="#">Private Trips</a></li>
+          <li><a href="#">Group Tours</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Trip Designers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Sustainability</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h4>Get in Touch</h4>
+        <div class="item">
+          <i class="bi bi-telephone-fill"></i>
+          <div>Need help?<br><b style="color:#fff">+1 415 555 0420</b></div>
+        </div>
+        <div class="item">
+          <i class="bi bi-envelope-fill"></i>
+          <div>Email us<br><b style="color:#fff"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2149444d4d4e61574e58404f42440f55534057444d">[email&#160;protected]</a></b></div>
+        </div>
+        <div class="item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <div>87 Market St.<br>San Francisco, CA</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Voyance Travel Co. — Crafted for people who'd rather be there.</div>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =================== MOBILE STICKY =================== -->
+<div class="mobile-sticky">
+  <div>
+    <b>Talk to a trip designer</b>
+    <span>Free 48-hour proposal</span>
+  </div>
+  <a href="#">Start <i class="bi bi-arrow-right"></i></a>
+</div>
+
+<!-- Bootstrap JS (bundle) -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- App JS -->
+<script src="script.js"></script>
+</body>
+</html>
